@@ -5,10 +5,10 @@ registered_users = {
 }
 
 
-def check_password(password):
-    for username, registered_password in registered_users.items():
-        if password.lower() == registered_password.lower():
-            return username
+def check_password(password, users):
+    for user in users:
+        if password == user["password"]:
+            return user["login"]
     return "Intruder"
 
 
